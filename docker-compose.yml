@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  node:
+    container_name: "nodejs"
+    build:
+      context: ./
+      target: dev
+    volumes:
+      - .:/src
+    command: npm run start:dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DEBUG: nodejs-docker-express:*
+      
+  postgresqls:
+    container_name: "postgresqlpostgis"
+    image: "postgis/postgis"
+    restart: always
+    ports: 
+      - "5433:5432"
+    volumes:
+       - db_persdata:/var/lib/postgrespers
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ecommerce-node-express-database_development
+
+    networks:
+      - default
+networks:
+  default:
+volumes:
+  db_persdata : {}

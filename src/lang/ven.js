@@ -1,0 +1,16 @@
+export default {
+    name: 'el nombre',
+    email: 'el correo',
+    phone: 'el teléfono',
+    password: 'la contraseña',
+    password_confirmation: 'la confirmación de contraseña',
+    account_created_successfully: () => `Cuenta creada con éxito`,
+    you_do_not_have_rights_to_access_this_resource: () => `No tienes permisos para acceder a este recurso`,
+    resource_not_found: () => `Recurso no encontrado`,
+    wrong_credentials: () => `Credenciales incorrectas`,
+    sign_in_successfully: () => `Inicio de sesión exitoso`,
+    token_not_provided: () => `Token no proporcionado`,
+    token_failed: () => `Token inválido`,
+    token_caducated: () => `Token caducado`,
+    sign_out_successful: () => `Cierre de sesión exitoso`,
+}
